@@ -52,7 +52,6 @@ def preprocess_data(df, is_train=True):
 train_processed = preprocess_data(train_df)
 test_processed = preprocess_data(test_df, is_train=False)
 
-# Double check for NaNs (XGBoost handles them but clean is better)
 train_processed = train_processed.fillna(train_processed.mean()).fillna(0)
 test_processed = test_processed.fillna(test_processed.mean()).fillna(0)
 
